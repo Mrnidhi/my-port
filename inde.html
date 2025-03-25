@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Video Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- AOS Library for Scroll Animations -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+</head>
+<body>
+  <!-- Sticky Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Video Alchemist</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+         <span></span>
+         <span></span>
+         <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Parallax -->
+  <section id="hero" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Professional Video Editor</h1>
+      <p>Making your videos look more cool.</p>
+      <a href="#contact" class="btn">Let's Talk</a>
+    </div>
+  </section>
+
+  <!-- Services Bar -->
+  <section class="services-bar">
+    <ul>
+      <li>Cash Cow Editing</li>
+      <li>Reels Editing</li>
+      <li>Logo Animation</li>
+      <li>Podcast Editing</li>
+    </ul>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section" data-aos="fade-right">
+    <h2>ABOUT ME</h2>
+    <p>
+      Welcome to the cinematic realm of Jimmy, where creativity meets technology to craft visually stunning narratives.
+      I transform ordinary footage into extraordinary visual experiences.
+    </p>
+  </section>
+
+  <!-- Portfolio Section with Filtering -->
+  <section id="portfolio" class="portfolio-section" data-aos="fade-up">
+    <h2>MY BEST EDITS</h2>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="cash">Cash Cow</button>
+      <button class="filter-btn" data-filter="reels">Reels</button>
+      <button class="filter-btn" data-filter="vlogs">Vlogs</button>
+    </div>
+    <div class="portfolio-items">
+      <div class="portfolio-item" data-category="cash" data-video="assets/videos/video1.mp4">
+        <img src="assets/images/edit1.jpg" alt="Cash Cow Edit">
+        <div class="overlay">
+          <button class="play-btn">Play Video</button>
+        </div>
+      </div>
+      <div class="portfolio-item" data-category="reels" data-video="assets/videos/video2.mp4">
+        <img src="assets/images/edit2.jpg" alt="Reels Edit">
+        <div class="overlay">
+          <button class="play-btn">Play Video</button>
+        </div>
+      </div>
+      <div class="portfolio-item" data-category="vlogs" data-video="assets/videos/video3.mp4">
+        <img src="assets/images/edit3.jpg" alt="Vlog Edit">
+        <div class="overlay">
+          <button class="play-btn">Play Video</button>
+        </div>
+      </div>
+      <!-- Add more portfolio items as needed -->
+    </div>
+  </section>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <video id="modalVideo" controls>
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- Testimonials Section with Slider -->
+  <section id="testimonials" class="testimonials-section" data-aos="fade-left">
+    <h2>TESTIMONIALS</h2>
+    <div class="slider">
+      <div class="slide active">
+        <blockquote>
+          "Perfect communication and exceptional skills. This guy is King."
+        </blockquote>
+        <h3>Marcus - Co-Founder</h3>
+      </div>
+      <div class="slide">
+        <blockquote>
+          "Did a great job. Understood all the requirements."
+        </blockquote>
+        <h3>Peter - Manager</h3>
+      </div>
+      <div class="slide">
+        <blockquote>
+          "Wonderful to work with. Will definitely hire him again."
+        </blockquote>
+        <h3>Jane - CEO</h3>
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button id="prevSlide">&lt;</button>
+      <button id="nextSlide">&gt;</button>
+    </div>
+  </section>
+
+  <!-- Contact Section with Real-Time Validation -->
+  <section id="contact" class="contact-section" data-aos="fade-up">
+    <h2>I AM READY TO CONSULT YOU</h2>
+    <form id="contactForm">
+      <label for="name">My Name Is</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+      <label for="interest">I Am Interested In</label>
+      <input type="text" id="interest" name="interest" placeholder="Service or Topic" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+    <div id="formFeedback"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>+92 455 478 112</p>
+      <p>Defense Phase 3, Lahore, Pakistan</p>
+      <p>videoeditor@gmail.com</p>
+    </div>
+    <p>&copy; 2025 Video Alchemist. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

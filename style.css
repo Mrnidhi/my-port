@@ -1,0 +1,447 @@
+/* ------------------------------
+   RESET & GLOBAL STYLES
+------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #0a0a0a;
+    color: #fff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+  
+  /* ------------------------------
+     NAVBAR
+  ------------------------------ */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #b300ff;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #b300ff;
+  }
+  
+  /* Hamburger Menu (Mobile) */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin-bottom: 4px;
+    border-radius: 2px;
+  }
+  
+  /* ------------------------------
+     HERO SECTION (with Parallax)
+  ------------------------------ */
+  .hero-section {
+    position: relative;
+    min-height: 80vh;
+    background: url("assets/images/hero-bg.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+  }
+  
+  .hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    background-color: #b300ff;
+    color: #fff;
+    padding: 0.8rem 1.4rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #d64bff;
+  }
+  
+  /* ------------------------------
+     SERVICES BAR
+  ------------------------------ */
+  .services-bar {
+    background-color: #000;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+  
+  .services-bar ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .services-bar li {
+    color: #b300ff;
+    font-weight: bold;
+  }
+  
+  /* ------------------------------
+     SECTION STYLES
+  ------------------------------ */
+  section {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  /* About Section */
+  .about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #b300ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .about-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* ------------------------------
+     PORTFOLIO SECTION
+  ------------------------------ */
+  .portfolio-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #b300ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .filter-buttons {
+    margin-bottom: 2rem;
+  }
+  
+  .filter-btn {
+    background-color: #111;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  
+  .filter-btn.active,
+  .filter-btn:hover {
+    background-color: #b300ff;
+  }
+  
+  .portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .portfolio-item {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    border: 1px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .portfolio-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .portfolio-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  .portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .portfolio-item:hover .overlay {
+    opacity: 1;
+  }
+  
+  .play-btn {
+    background-color: #b300ff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  
+  .play-btn:hover {
+    background-color: #d64bff;
+  }
+  
+  /* ------------------------------
+     MODAL STYLES
+  ------------------------------ */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: #000;
+    padding: 1rem;
+    max-width: 800px;
+    width: 90%;
+    border-radius: 8px;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  /* ------------------------------
+     TESTIMONIALS SLIDER
+  ------------------------------ */
+  .testimonials-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #b300ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .slide {
+    display: none;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .slide.active {
+    display: block;
+  }
+  
+  .slide blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .slider-controls {
+    margin-top: 1rem;
+  }
+  
+  .slider-controls button {
+    background-color: #b300ff;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 0.5rem;
+    transition: background 0.3s ease;
+  }
+  
+  .slider-controls button:hover {
+    background-color: #d64bff;
+  }
+  
+  /* ------------------------------
+     CONTACT SECTION
+  ------------------------------ */
+  .contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #b300ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .contact-section form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contact-section label {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .contact-section input,
+  .contact-section textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #111;
+    color: #fff;
+  }
+  
+  .contact-section button {
+    background-color: #b300ff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .contact-section button:hover {
+    background-color: #d64bff;
+  }
+  
+  #formFeedback {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #d64bff;
+  }
+  
+  /* ------------------------------
+     FOOTER
+  ------------------------------ */
+  footer {
+    background-color: #000;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .footer-content p {
+    margin-bottom: 0.5rem;
+    color: #ccc;
+  }
+  
+  footer p {
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  
+  /* ------------------------------
+     RESPONSIVE STYLES
+  ------------------------------ */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #000;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      padding: 1rem;
+    }
+    
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+    
+    .portfolio-items {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
